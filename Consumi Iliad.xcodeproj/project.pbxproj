@@ -1,0 +1,598 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		66AEA86C2523C2F000DF2A35 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AEA86B2523C2F000DF2A35 /* AppDelegate.swift */; };
+		66AEA86E2523C2F000DF2A35 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AEA86D2523C2F000DF2A35 /* SceneDelegate.swift */; };
+		66AEA8702523C2F000DF2A35 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AEA86F2523C2F000DF2A35 /* ViewController.swift */; };
+		66AEA8732523C2F000DF2A35 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66AEA8712523C2F000DF2A35 /* Main.storyboard */; };
+		66AEA8752523C2F000DF2A35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66AEA8742523C2F000DF2A35 /* Assets.xcassets */; };
+		66AEA8782523C2F000DF2A35 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66AEA8762523C2F000DF2A35 /* LaunchScreen.storyboard */; };
+		66AEA8832523C2F100DF2A35 /* Consumi_IliadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AEA8822523C2F100DF2A35 /* Consumi_IliadTests.swift */; };
+		66AEA88E2523C2F100DF2A35 /* Consumi_IliadUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AEA88D2523C2F100DF2A35 /* Consumi_IliadUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		66AEA87F2523C2F100DF2A35 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 66AEA8602523C2EF00DF2A35 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 66AEA8672523C2F000DF2A35;
+			remoteInfo = "Consumi Iliad";
+		};
+		66AEA88A2523C2F100DF2A35 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 66AEA8602523C2EF00DF2A35 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 66AEA8672523C2F000DF2A35;
+			remoteInfo = "Consumi Iliad";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		66AEA8682523C2F000DF2A35 /* Consumi Iliad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Consumi Iliad.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		66AEA86B2523C2F000DF2A35 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		66AEA86D2523C2F000DF2A35 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		66AEA86F2523C2F000DF2A35 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		66AEA8722523C2F000DF2A35 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		66AEA8742523C2F000DF2A35 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		66AEA8772523C2F000DF2A35 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		66AEA8792523C2F000DF2A35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		66AEA87E2523C2F100DF2A35 /* Consumi IliadTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Consumi IliadTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		66AEA8822523C2F100DF2A35 /* Consumi_IliadTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Consumi_IliadTests.swift; sourceTree = "<group>"; };
+		66AEA8842523C2F100DF2A35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		66AEA8892523C2F100DF2A35 /* Consumi IliadUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Consumi IliadUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		66AEA88D2523C2F100DF2A35 /* Consumi_IliadUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Consumi_IliadUITests.swift; sourceTree = "<group>"; };
+		66AEA88F2523C2F100DF2A35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		66AEA8652523C2F000DF2A35 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		66AEA87B2523C2F100DF2A35 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		66AEA8862523C2F100DF2A35 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		66AEA85F2523C2EF00DF2A35 = {
+			isa = PBXGroup;
+			children = (
+				66AEA86A2523C2F000DF2A35 /* Consumi Iliad */,
+				66AEA8812523C2F100DF2A35 /* Consumi IliadTests */,
+				66AEA88C2523C2F100DF2A35 /* Consumi IliadUITests */,
+				66AEA8692523C2F000DF2A35 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		66AEA8692523C2F000DF2A35 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				66AEA8682523C2F000DF2A35 /* Consumi Iliad.app */,
+				66AEA87E2523C2F100DF2A35 /* Consumi IliadTests.xctest */,
+				66AEA8892523C2F100DF2A35 /* Consumi IliadUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		66AEA86A2523C2F000DF2A35 /* Consumi Iliad */ = {
+			isa = PBXGroup;
+			children = (
+				66AEA86B2523C2F000DF2A35 /* AppDelegate.swift */,
+				66AEA86D2523C2F000DF2A35 /* SceneDelegate.swift */,
+				66AEA86F2523C2F000DF2A35 /* ViewController.swift */,
+				66AEA8712523C2F000DF2A35 /* Main.storyboard */,
+				66AEA8742523C2F000DF2A35 /* Assets.xcassets */,
+				66AEA8762523C2F000DF2A35 /* LaunchScreen.storyboard */,
+				66AEA8792523C2F000DF2A35 /* Info.plist */,
+			);
+			path = "Consumi Iliad";
+			sourceTree = "<group>";
+		};
+		66AEA8812523C2F100DF2A35 /* Consumi IliadTests */ = {
+			isa = PBXGroup;
+			children = (
+				66AEA8822523C2F100DF2A35 /* Consumi_IliadTests.swift */,
+				66AEA8842523C2F100DF2A35 /* Info.plist */,
+			);
+			path = "Consumi IliadTests";
+			sourceTree = "<group>";
+		};
+		66AEA88C2523C2F100DF2A35 /* Consumi IliadUITests */ = {
+			isa = PBXGroup;
+			children = (
+				66AEA88D2523C2F100DF2A35 /* Consumi_IliadUITests.swift */,
+				66AEA88F2523C2F100DF2A35 /* Info.plist */,
+			);
+			path = "Consumi IliadUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		66AEA8672523C2F000DF2A35 /* Consumi Iliad */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 66AEA8922523C2F100DF2A35 /* Build configuration list for PBXNativeTarget "Consumi Iliad" */;
+			buildPhases = (
+				66AEA8642523C2F000DF2A35 /* Sources */,
+				66AEA8652523C2F000DF2A35 /* Frameworks */,
+				66AEA8662523C2F000DF2A35 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Consumi Iliad";
+			productName = "Consumi Iliad";
+			productReference = 66AEA8682523C2F000DF2A35 /* Consumi Iliad.app */;
+			productType = "com.apple.product-type.application";
+		};
+		66AEA87D2523C2F100DF2A35 /* Consumi IliadTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 66AEA8952523C2F100DF2A35 /* Build configuration list for PBXNativeTarget "Consumi IliadTests" */;
+			buildPhases = (
+				66AEA87A2523C2F100DF2A35 /* Sources */,
+				66AEA87B2523C2F100DF2A35 /* Frameworks */,
+				66AEA87C2523C2F100DF2A35 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				66AEA8802523C2F100DF2A35 /* PBXTargetDependency */,
+			);
+			name = "Consumi IliadTests";
+			productName = "Consumi IliadTests";
+			productReference = 66AEA87E2523C2F100DF2A35 /* Consumi IliadTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		66AEA8882523C2F100DF2A35 /* Consumi IliadUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 66AEA8982523C2F100DF2A35 /* Build configuration list for PBXNativeTarget "Consumi IliadUITests" */;
+			buildPhases = (
+				66AEA8852523C2F100DF2A35 /* Sources */,
+				66AEA8862523C2F100DF2A35 /* Frameworks */,
+				66AEA8872523C2F100DF2A35 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				66AEA88B2523C2F100DF2A35 /* PBXTargetDependency */,
+			);
+			name = "Consumi IliadUITests";
+			productName = "Consumi IliadUITests";
+			productReference = 66AEA8892523C2F100DF2A35 /* Consumi IliadUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		66AEA8602523C2EF00DF2A35 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1200;
+				LastUpgradeCheck = 1200;
+				TargetAttributes = {
+					66AEA8672523C2F000DF2A35 = {
+						CreatedOnToolsVersion = 12.0.1;
+					};
+					66AEA87D2523C2F100DF2A35 = {
+						CreatedOnToolsVersion = 12.0.1;
+						TestTargetID = 66AEA8672523C2F000DF2A35;
+					};
+					66AEA8882523C2F100DF2A35 = {
+						CreatedOnToolsVersion = 12.0.1;
+						TestTargetID = 66AEA8672523C2F000DF2A35;
+					};
+				};
+			};
+			buildConfigurationList = 66AEA8632523C2EF00DF2A35 /* Build configuration list for PBXProject "Consumi Iliad" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 66AEA85F2523C2EF00DF2A35;
+			productRefGroup = 66AEA8692523C2F000DF2A35 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				66AEA8672523C2F000DF2A35 /* Consumi Iliad */,
+				66AEA87D2523C2F100DF2A35 /* Consumi IliadTests */,
+				66AEA8882523C2F100DF2A35 /* Consumi IliadUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		66AEA8662523C2F000DF2A35 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				66AEA8782523C2F000DF2A35 /* LaunchScreen.storyboard in Resources */,
+				66AEA8752523C2F000DF2A35 /* Assets.xcassets in Resources */,
+				66AEA8732523C2F000DF2A35 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		66AEA87C2523C2F100DF2A35 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		66AEA8872523C2F100DF2A35 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		66AEA8642523C2F000DF2A35 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				66AEA8702523C2F000DF2A35 /* ViewController.swift in Sources */,
+				66AEA86C2523C2F000DF2A35 /* AppDelegate.swift in Sources */,
+				66AEA86E2523C2F000DF2A35 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		66AEA87A2523C2F100DF2A35 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				66AEA8832523C2F100DF2A35 /* Consumi_IliadTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		66AEA8852523C2F100DF2A35 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				66AEA88E2523C2F100DF2A35 /* Consumi_IliadUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		66AEA8802523C2F100DF2A35 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 66AEA8672523C2F000DF2A35 /* Consumi Iliad */;
+			targetProxy = 66AEA87F2523C2F100DF2A35 /* PBXContainerItemProxy */;
+		};
+		66AEA88B2523C2F100DF2A35 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 66AEA8672523C2F000DF2A35 /* Consumi Iliad */;
+			targetProxy = 66AEA88A2523C2F100DF2A35 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		66AEA8712523C2F000DF2A35 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				66AEA8722523C2F000DF2A35 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		66AEA8762523C2F000DF2A35 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				66AEA8772523C2F000DF2A35 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		66AEA8902523C2F100DF2A35 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		66AEA8912523C2F100DF2A35 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		66AEA8932523C2F100DF2A35 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2FE7MP24X8;
+				INFOPLIST_FILE = "Consumi Iliad/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "it.matteovisotto.Consumi-Iliad";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		66AEA8942523C2F100DF2A35 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2FE7MP24X8;
+				INFOPLIST_FILE = "Consumi Iliad/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "it.matteovisotto.Consumi-Iliad";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		66AEA8962523C2F100DF2A35 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2FE7MP24X8;
+				INFOPLIST_FILE = "Consumi IliadTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "it.matteovisotto.Consumi-IliadTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Consumi Iliad.app/Consumi Iliad";
+			};
+			name = Debug;
+		};
+		66AEA8972523C2F100DF2A35 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2FE7MP24X8;
+				INFOPLIST_FILE = "Consumi IliadTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "it.matteovisotto.Consumi-IliadTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Consumi Iliad.app/Consumi Iliad";
+			};
+			name = Release;
+		};
+		66AEA8992523C2F100DF2A35 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2FE7MP24X8;
+				INFOPLIST_FILE = "Consumi IliadUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "it.matteovisotto.Consumi-IliadUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Consumi Iliad";
+			};
+			name = Debug;
+		};
+		66AEA89A2523C2F100DF2A35 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2FE7MP24X8;
+				INFOPLIST_FILE = "Consumi IliadUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "it.matteovisotto.Consumi-IliadUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Consumi Iliad";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		66AEA8632523C2EF00DF2A35 /* Build configuration list for PBXProject "Consumi Iliad" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				66AEA8902523C2F100DF2A35 /* Debug */,
+				66AEA8912523C2F100DF2A35 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		66AEA8922523C2F100DF2A35 /* Build configuration list for PBXNativeTarget "Consumi Iliad" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				66AEA8932523C2F100DF2A35 /* Debug */,
+				66AEA8942523C2F100DF2A35 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		66AEA8952523C2F100DF2A35 /* Build configuration list for PBXNativeTarget "Consumi IliadTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				66AEA8962523C2F100DF2A35 /* Debug */,
+				66AEA8972523C2F100DF2A35 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		66AEA8982523C2F100DF2A35 /* Build configuration list for PBXNativeTarget "Consumi IliadUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				66AEA8992523C2F100DF2A35 /* Debug */,
+				66AEA89A2523C2F100DF2A35 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 66AEA8602523C2EF00DF2A35 /* Project object */;
+}
