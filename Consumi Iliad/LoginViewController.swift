@@ -173,7 +173,7 @@ class LoginViewController: UIViewController {
     private func saveCredential() {
         let userDefault = UserDefaults.standard
         userDefault.setValue(self.usernameTF.text!, forKey: "username")
-        userDefault.setValue(self.passwordTF, forKey: "password")
+        userDefault.setValue(self.passwordTF.text!, forKey: "password")
     }
     
     
@@ -217,7 +217,11 @@ extension LoginViewController: DataDownloaderDelegate {
                     }
                 }
             } else {
-                
+                //Login has been successfully completed
+                DispatchQueue.main.async {
+                    self.saveCredential()
+                    self.switchViewController()
+                }
             }
         } catch {
             DispatchQueue.main.async {
