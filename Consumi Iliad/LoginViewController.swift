@@ -10,12 +10,14 @@ import SwiftSoup
 
 class LoginViewController: UIViewController {
 
-    let usernameTF = UITextField()
-    let passwordTF = UITextField()
-    let logo = UIImageView()
-    let infoLabel = UILabel()
+    private let usernameTF = UITextField()
+    private let passwordTF = UITextField()
+    private let logo = UIImageView()
+    private let infoLabel = UILabel()
     
-    let loginButton = UIButton()
+    private let loginButton = UIButton()
+    
+    private var loadingAlert:LoadingAlert? = nil
     
     private let textFieldHeight: CGFloat = 40
     
@@ -25,6 +27,7 @@ class LoginViewController: UIViewController {
         sfondo.image = UIImage(named: "sfondo")!
         sfondo.contentMode = .scaleAspectFill
         self.view.addSubview(sfondo)
+       
         setupUI()
 
     }
@@ -121,6 +124,11 @@ class LoginViewController: UIViewController {
     }
     
     @objc private func performLogin() {
+        
+        loadingAlert = LoadingAlert(frame: self.view.frame)
+        loadingAlert!.activityMessage = "Login in corso..."
+        loadingAlert!.present(in: self)
+        
         let postURL = "https://www.iliad.it/account/"
         let parameters = ["login-ident":usernameTF.text!,
                           "login-pwd":passwordTF.text!]
@@ -146,6 +154,9 @@ class LoginViewController: UIViewController {
 extension LoginViewController: DataDownloaderDelegate {
     func didDownloadedData(result: Bool, fromUrl: String, withData data: String) {
         print(data)
+        DispatchQueue.main.async {
+            self.loadingAlert?.remove()
+        }
         do {
             let doc: Document = try SwiftSoup.parse(data)
             let errorDivs: Elements = try doc.select("div")
