@@ -14,6 +14,7 @@
 		6673780E2523C47E00145659 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6673780D2523C47E00145659 /* LoginViewController.swift */; };
 		667378172523CBAF00145659 /* DataDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667378162523CBAF00145659 /* DataDownloader.swift */; };
 		6673781C2523CC2F00145659 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6673781B2523CC2F00145659 /* SessionManager.swift */; };
+		667C151C25250CB900560E49 /* CreditoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667C151B25250CB900560E49 /* CreditoTableViewCell.swift */; };
 		66AEA86C2523C2F000DF2A35 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AEA86B2523C2F000DF2A35 /* AppDelegate.swift */; };
 		66AEA86E2523C2F000DF2A35 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AEA86D2523C2F000DF2A35 /* SceneDelegate.swift */; };
 		66AEA8702523C2F000DF2A35 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AEA86F2523C2F000DF2A35 /* ViewController.swift */; };
@@ -22,6 +23,9 @@
 		66AEA8832523C2F100DF2A35 /* Consumi_IliadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AEA8822523C2F100DF2A35 /* Consumi_IliadTests.swift */; };
 		66AEA88E2523C2F100DF2A35 /* Consumi_IliadUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AEA88D2523C2F100DF2A35 /* Consumi_IliadUITests.swift */; };
 		66AEA8A22523C38500DF2A35 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AEA8A12523C38500DF2A35 /* LoadingViewController.swift */; };
+		66E5D2B92525172200B8F279 /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E5D2B82525172200B8F279 /* HomeHeaderView.swift */; };
+		66E5D2C1252519A800B8F279 /* SogliaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E5D2C0252519A800B8F279 /* SogliaCollectionViewCell.swift */; };
+		66E5D2C825251DF700B8F279 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E5D2C725251DF700B8F279 /* User.swift */; };
 		DEC85EA1B720B1EF1EA34F31 /* Pods_Consumi_Iliad_Consumi_IliadUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5746E48E88F770E4BA0DD22E /* Pods_Consumi_Iliad_Consumi_IliadUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +57,7 @@
 		6673780D2523C47E00145659 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		667378162523CBAF00145659 /* DataDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataDownloader.swift; sourceTree = "<group>"; };
 		6673781B2523CC2F00145659 /* SessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
+		667C151B25250CB900560E49 /* CreditoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditoTableViewCell.swift; sourceTree = "<group>"; };
 		66AEA8682523C2F000DF2A35 /* Consumi Iliad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Consumi Iliad.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		66AEA86B2523C2F000DF2A35 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		66AEA86D2523C2F000DF2A35 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +72,9 @@
 		66AEA88D2523C2F100DF2A35 /* Consumi_IliadUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Consumi_IliadUITests.swift; sourceTree = "<group>"; };
 		66AEA88F2523C2F100DF2A35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		66AEA8A12523C38500DF2A35 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		66E5D2B82525172200B8F279 /* HomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
+		66E5D2C0252519A800B8F279 /* SogliaCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SogliaCollectionViewCell.swift; sourceTree = "<group>"; };
+		66E5D2C725251DF700B8F279 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		6AAC21A30D3D46B4EA577CC7 /* Pods-Consumi IliadTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Consumi IliadTests.release.xcconfig"; path = "Target Support Files/Pods-Consumi IliadTests/Pods-Consumi IliadTests.release.xcconfig"; sourceTree = "<group>"; };
 		A0300C18E6F9EE1258E219C7 /* Pods-Consumi IliadTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Consumi IliadTests.debug.xcconfig"; path = "Target Support Files/Pods-Consumi IliadTests/Pods-Consumi IliadTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A3E136924583DAC6A45892BE /* Pods-Consumi Iliad-Consumi IliadUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Consumi Iliad-Consumi IliadUITests.release.xcconfig"; path = "Target Support Files/Pods-Consumi Iliad-Consumi IliadUITests/Pods-Consumi Iliad-Consumi IliadUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -132,6 +140,15 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		667C15122525007F00560E49 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				667C151B25250CB900560E49 /* CreditoTableViewCell.swift */,
+				66E5D2C0252519A800B8F279 /* SogliaCollectionViewCell.swift */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
 		66AEA85F2523C2EF00DF2A35 = {
 			isa = PBXGroup;
 			children = (
@@ -157,6 +174,9 @@
 		66AEA86A2523C2F000DF2A35 /* Consumi Iliad */ = {
 			isa = PBXGroup;
 			children = (
+				66E5D2C625251DEA00B8F279 /* Model */,
+				66E5D2C525251DD600B8F279 /* Views */,
+				667C15122525007F00560E49 /* TableViewCell */,
 				66376B4B25246A9D00D54DDB /* Alert */,
 				667378152523CB9E00145659 /* Network */,
 				66AEA86B2523C2F000DF2A35 /* AppDelegate.swift */,
@@ -187,6 +207,22 @@
 				66AEA88F2523C2F100DF2A35 /* Info.plist */,
 			);
 			path = "Consumi IliadUITests";
+			sourceTree = "<group>";
+		};
+		66E5D2C525251DD600B8F279 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				66E5D2B82525172200B8F279 /* HomeHeaderView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		66E5D2C625251DEA00B8F279 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				66E5D2C725251DF700B8F279 /* User.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		B7E69525D4A5691CBA4133F6 /* Frameworks */ = {
@@ -436,7 +472,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66E5D2C825251DF700B8F279 /* User.swift in Sources */,
+				66E5D2B92525172200B8F279 /* HomeHeaderView.swift in Sources */,
 				66AEA8702523C2F000DF2A35 /* ViewController.swift in Sources */,
+				667C151C25250CB900560E49 /* CreditoTableViewCell.swift in Sources */,
+				66E5D2C1252519A800B8F279 /* SogliaCollectionViewCell.swift in Sources */,
 				66AEA86C2523C2F000DF2A35 /* AppDelegate.swift in Sources */,
 				66638DEF25247777001A1540 /* ErrorAlertController.swift in Sources */,
 				66376B4D25246AB100D54DDB /* LoadingAlert.swift in Sources */,
