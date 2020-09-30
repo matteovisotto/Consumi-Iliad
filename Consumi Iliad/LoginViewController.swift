@@ -6,65 +6,118 @@
 //
 
 import UIKit
-import Alamofire
 import SwiftSoup
 
 class LoginViewController: UIViewController {
 
     let usernameTF = UITextField()
     let passwordTF = UITextField()
-    
-    let usernameLabel = UILabel()
-    let passwordLabel = UILabel()
+    let logo = UIImageView()
+    let infoLabel = UILabel()
     
     let loginButton = UIButton()
     
+    private let textFieldHeight: CGFloat = 40
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .systemBackground
+        let sfondo = UIImageView(frame: self.view.frame)
+        sfondo.image = UIImage(named: "sfondo")!
+        sfondo.contentMode = .scaleAspectFill
+        self.view.addSubview(sfondo)
         setupUI()
 
     }
     
     private func setupUI() {
+        let containerView = UIView()
+        self.view.addSubview(containerView)
+        containerView.translatesAutoresizingMaskIntoConstraints = false
+        containerView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
+        containerView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        containerView.widthAnchor.constraint(equalToConstant: self.view.frame.width-40).isActive = true
+        containerView.layer.masksToBounds = true
+        containerView.layer.cornerRadius = 10
+        containerView.backgroundColor = .systemBackground
+        
         let stackView = UIStackView()
         stackView.axis = .vertical
-        self.view.addSubview(stackView)
+        containerView.addSubview(stackView)
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.spacing = 8
-        stackView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-        stackView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
+        stackView.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 10).isActive = true
+        stackView.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: 10).isActive = true
+        stackView.rightAnchor.constraint(equalTo: containerView.rightAnchor, constant: -10).isActive = true
         
-        stackView.addArrangedSubview(usernameLabel)
-        stackView.addArrangedSubview(usernameTF)
-        stackView.addArrangedSubview(passwordLabel)
-        stackView.addArrangedSubview(passwordTF)
+        let usernameView = createTFView(for: usernameTF, withImageIcon: UIImage(named: "user")!, height: self.textFieldHeight)
+        let passwordView = createTFView(for: passwordTF, withImageIcon: UIImage(named: "password")!, height: self.textFieldHeight)
+       
+        stackView.addArrangedSubview(logo)
+        stackView.addArrangedSubview(infoLabel)
+        stackView.addArrangedSubview(usernameView)
+        stackView.addArrangedSubview(passwordView)
+        
+        infoLabel.text = "Inserisci i dati del tuo account Iliad"
+        infoLabel.textAlignment = .center
+        
+        logo.translatesAutoresizingMaskIntoConstraints = false
+        logo.heightAnchor.constraint(equalToConstant: 90).isActive = true
+        logo.image = UIImage(named: "appLogo")!
+        logo.contentMode = .scaleAspectFit
+        logo.tintColor = UIColor(named: "primary")!
+        
+        usernameView.translatesAutoresizingMaskIntoConstraints = false
+        usernameView.heightAnchor.constraint(equalToConstant: self.textFieldHeight).isActive = true
+        
+        passwordView.translatesAutoresizingMaskIntoConstraints = false
+        passwordView.heightAnchor.constraint(equalToConstant: self.textFieldHeight).isActive = true
         
         usernameTF.placeholder = "Codice identificativo"
         passwordTF.placeholder = "Password"
         
-        usernameTF.backgroundColor = UIColor.white.withAlphaComponent(0.5)
         
-        usernameTF.translatesAutoresizingMaskIntoConstraints = false
-        usernameTF.widthAnchor.constraint(equalToConstant: self.view.frame.width-50).isActive = true
-        
-        self.view.addSubview(loginButton)
+        containerView.addSubview(loginButton)
+        let loginButtonDimen = 40
         loginButton.translatesAutoresizingMaskIntoConstraints = false
         loginButton.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 20).isActive = true
-        loginButton.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 15).isActive = true
-        loginButton.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -15).isActive = true
+        loginButton.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: 10).isActive = true
+        loginButton.rightAnchor.constraint(equalTo: containerView.rightAnchor, constant: -10).isActive = true
+        loginButton.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -10).isActive = true
+        loginButton.heightAnchor.constraint(equalToConstant: CGFloat(loginButtonDimen)).isActive=true
         
-        usernameLabel.text = "Codice identificativo"
-        
-        passwordLabel.text = "Password"
         
         loginButton.setTitle("Login", for: .normal)
         loginButton.titleLabel?.font = .boldSystemFont(ofSize: 20)
-        loginButton.backgroundColor = .red
-        loginButton.layer.cornerRadius = 10
+        loginButton.backgroundColor = UIColor(named: "primary")!
+        loginButton.layer.cornerRadius = CGFloat(loginButtonDimen/2)
         
         loginButton.addTarget(self, action: #selector(performLogin), for: .touchUpInside)
         
+    }
+    
+    private func createTFView(for textField: UITextField, withImageIcon icon: UIImage, height: CGFloat) -> UIView {
+        let view = UIView()
+        let imageView = UIImageView()
+        view.addSubview(imageView)
+        view.addSubview(textField)
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 8).isActive = true
+        imageView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 10).isActive = true
+        imageView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -8).isActive = true
+        imageView.widthAnchor.constraint(equalToConstant: height-16).isActive = true
+        imageView.image = icon
+        imageView.contentMode = .scaleAspectFit
+        imageView.tintColor = .label
+        
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.leftAnchor.constraint(equalTo: imageView.rightAnchor, constant: 10).isActive = true
+        textField.topAnchor.constraint(equalTo: view.topAnchor, constant: 5).isActive = true
+        textField.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -height/2).isActive = true
+        textField.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -5).isActive = true
+        
+        view.layer.cornerRadius = height/2
+        view.backgroundColor = UIColor.lightGray.withAlphaComponent(0.5)
+        return view
     }
     
     @objc private func performLogin() {
@@ -77,7 +130,17 @@ class LoginViewController: UIViewController {
         
         
     }
-
+    
+    private func switchViewController() {
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+          let sceneDelegate = windowScene.delegate as? SceneDelegate
+        else {
+          return
+        }
+        let rootViewController = ViewController()
+        sceneDelegate.window?.rootViewController = rootViewController
+    }
+    
 }
 
 extension LoginViewController: DataDownloaderDelegate {
