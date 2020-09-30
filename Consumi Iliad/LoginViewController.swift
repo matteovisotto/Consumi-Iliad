@@ -23,6 +23,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
         let sfondo = UIImageView(frame: self.view.frame)
         sfondo.image = UIImage(named: "sfondo")!
         sfondo.contentMode = .scaleAspectFill
@@ -76,8 +77,14 @@ class LoginViewController: UIViewController {
         passwordView.heightAnchor.constraint(equalToConstant: self.textFieldHeight).isActive = true
         
         usernameTF.placeholder = "Codice identificativo"
-        passwordTF.placeholder = "Password"
+        usernameTF.keyboardType = .numberPad
         
+        passwordTF.placeholder = "Password"
+        passwordTF.isSecureTextEntry = true
+        
+        usernameTF.addTarget(self, action: #selector(textFieldChanged(_:)), for: .editingChanged)
+        
+        passwordTF.addTarget(self, action: #selector(performLogin), for: .primaryActionTriggered)
         
         containerView.addSubview(loginButton)
         let loginButtonDimen = 40
@@ -139,6 +146,20 @@ class LoginViewController: UIViewController {
         
     }
     
+    @objc private func textFieldChanged(_ sender: UITextField) {
+        let superView = sender.superview
+        if(!sender.text!.isEmpty) {
+            if(!sender.text!.isNumeric){
+                superView?.backgroundColor = UIColor(named: "primary")!.withAlphaComponent(0.5)
+            } else {
+                superView?.backgroundColor = UIColor.lightGray.withAlphaComponent(0.5)
+            }
+        } else {
+            superView?.backgroundColor = UIColor.lightGray.withAlphaComponent(0.5)
+        }
+        
+    }
+    
     private func switchViewController() {
         guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
           let sceneDelegate = windowScene.delegate as? SceneDelegate
@@ -148,6 +169,14 @@ class LoginViewController: UIViewController {
         let rootViewController = ViewController()
         sceneDelegate.window?.rootViewController = rootViewController
     }
+    
+    private func saveCredential() {
+        let userDefault = UserDefaults.standard
+        userDefault.setValue(self.usernameTF.text!, forKey: "username")
+        userDefault.setValue(self.passwordTF, forKey: "password")
+    }
+    
+    
     
     private func presentErrorAlert(title: String, message: String) {
         let errorAlert = ErrorAlertController()
@@ -198,4 +227,25 @@ extension LoginViewController: DataDownloaderDelegate {
     }
     
     
+}
+
+extension String {
+    var isNumeric: Bool {
+        guard self.count > 0 else { return false }
+        let nums: Set<Character> = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
+        return Set(self).isSubset(of: nums)
+    }
+}
+
+//Hiding keybord function
+extension UIViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
 }

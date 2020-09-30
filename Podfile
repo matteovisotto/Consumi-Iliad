@@ -16,7 +16,6 @@ target 'Consumi Iliad' do
     # Pods for testing
   end
 
-pod 'Alamofire'
 pod 'SwiftSoup'
 
 end
