@@ -149,25 +149,51 @@ class LoginViewController: UIViewController {
         sceneDelegate.window?.rootViewController = rootViewController
     }
     
+    private func presentErrorAlert(title: String, message: String) {
+        let errorAlert = ErrorAlertController()
+        errorAlert.providesPresentationContextTransitionStyle = true
+        errorAlert.definesPresentationContext = true
+        errorAlert.modalPresentationStyle = .overFullScreen
+        errorAlert.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
+        errorAlert.setAlert(title: title, message: message)
+        self.present(errorAlert, animated: true, completion: nil)
+    }
 }
 
 extension LoginViewController: DataDownloaderDelegate {
     func didDownloadedData(result: Bool, fromUrl: String, withData data: String) {
-        print(data)
         DispatchQueue.main.async {
             self.loadingAlert?.remove()
         }
+        
+        if(!result) {
+            DispatchQueue.main.async {
+                self.presentErrorAlert(title: "Attenzione", message: "Si è verificato un errore nella comunicazione con il server: \(data)")
+            }
+        }
+        
         do {
             let doc: Document = try SwiftSoup.parse(data)
             let errorDivs: Elements = try doc.select("div")
             let error = errorDivs.hasClass("flash flash-error")
+            
             if(error){
-               
+                for div in errorDivs {
+                    if(try div.className() == "flash flash-error"){
+                        let message = try div.text().dropLast()
+                        DispatchQueue.main.async {
+                            self.presentErrorAlert(title: "Attenzione", message: String(message))
+                        }
+                        return
+                    }
+                }
             } else {
                 
             }
         } catch {
-            print("Errore")
+            DispatchQueue.main.async {
+                self.presentErrorAlert(title: "Attenzione", message: "Si è verificato un errore con la risposta fornita dal server")
+            }
         }
     }
     

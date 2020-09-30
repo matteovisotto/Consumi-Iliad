@@ -10,6 +10,7 @@
 		11E9A4A1087883FA9436A8BB /* Pods_Consumi_IliadTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C934E872F5516DEBCF7AEEE /* Pods_Consumi_IliadTests.framework */; };
 		16DD43E52C9298FB4E408912 /* Pods_Consumi_Iliad.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CADEF4F413FA126F6AC459FA /* Pods_Consumi_Iliad.framework */; };
 		66376B4D25246AB100D54DDB /* LoadingAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66376B4C25246AB100D54DDB /* LoadingAlert.swift */; };
+		66638DEF25247777001A1540 /* ErrorAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66638DEE25247777001A1540 /* ErrorAlertController.swift */; };
 		6673780E2523C47E00145659 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6673780D2523C47E00145659 /* LoginViewController.swift */; };
 		667378172523CBAF00145659 /* DataDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667378162523CBAF00145659 /* DataDownloader.swift */; };
 		6673781C2523CC2F00145659 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6673781B2523CC2F00145659 /* SessionManager.swift */; };
@@ -48,6 +49,7 @@
 		4C934E872F5516DEBCF7AEEE /* Pods_Consumi_IliadTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Consumi_IliadTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5746E48E88F770E4BA0DD22E /* Pods_Consumi_Iliad_Consumi_IliadUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Consumi_Iliad_Consumi_IliadUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		66376B4C25246AB100D54DDB /* LoadingAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingAlert.swift; sourceTree = "<group>"; };
+		66638DEE25247777001A1540 /* ErrorAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorAlertController.swift; sourceTree = "<group>"; };
 		6673780D2523C47E00145659 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		667378162523CBAF00145659 /* DataDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataDownloader.swift; sourceTree = "<group>"; };
 		6673781B2523CC2F00145659 /* SessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				66376B4C25246AB100D54DDB /* LoadingAlert.swift */,
+				66638DEE25247777001A1540 /* ErrorAlertController.swift */,
 			);
 			path = Alert;
 			sourceTree = "<group>";
@@ -435,6 +438,7 @@
 			files = (
 				66AEA8702523C2F000DF2A35 /* ViewController.swift in Sources */,
 				66AEA86C2523C2F000DF2A35 /* AppDelegate.swift in Sources */,
+				66638DEF25247777001A1540 /* ErrorAlertController.swift in Sources */,
 				66376B4D25246AB100D54DDB /* LoadingAlert.swift in Sources */,
 				66AEA86E2523C2F000DF2A35 /* SceneDelegate.swift in Sources */,
 				6673780E2523C47E00145659 /* LoginViewController.swift in Sources */,

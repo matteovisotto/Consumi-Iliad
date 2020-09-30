@@ -43,6 +43,9 @@ class DataDownloader {
         
         let dataTask = self.session?.dataTask(with: myRequest) { (data, response, error) in
             let statusCode = (response as! HTTPURLResponse).statusCode
+            if(error != nil) {
+                self.delegate?.didDownloadedData(result: false, fromUrl: "", withData: String(statusCode))
+            }
             if(statusCode == 200) {
                 self.delegate?.didDownloadedData(result: true, fromUrl: self.downloadURL, withData: String(data: data!, encoding: .utf8) ?? "")
             }
