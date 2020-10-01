@@ -32,6 +32,7 @@
 		66D284FC25260BD200DE12C3 /* SettingsTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D284FB25260BD200DE12C3 /* SettingsTableViewHeader.swift */; };
 		66D2850125260E7000DE12C3 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D2850025260E7000DE12C3 /* InfoViewController.swift */; };
 		66D285062526641D00DE12C3 /* CreditoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D285052526641D00DE12C3 /* CreditoCollectionViewCell.swift */; };
+		66D285102526681500DE12C3 /* informazioni.txt in Resources */ = {isa = PBXBuildFile; fileRef = 66D2850F2526681500DE12C3 /* informazioni.txt */; };
 		66E5D2B92525172200B8F279 /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E5D2B82525172200B8F279 /* HomeHeaderView.swift */; };
 		66E5D2C1252519A800B8F279 /* SogliaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E5D2C0252519A800B8F279 /* SogliaCollectionViewCell.swift */; };
 		66E5D2C825251DF700B8F279 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E5D2C725251DF700B8F279 /* User.swift */; };
@@ -90,6 +91,7 @@
 		66D284FB25260BD200DE12C3 /* SettingsTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewHeader.swift; sourceTree = "<group>"; };
 		66D2850025260E7000DE12C3 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		66D285052526641D00DE12C3 /* CreditoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditoCollectionViewCell.swift; sourceTree = "<group>"; };
+		66D2850F2526681500DE12C3 /* informazioni.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = informazioni.txt; sourceTree = "<group>"; };
 		66E5D2B82525172200B8F279 /* HomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
 		66E5D2C0252519A800B8F279 /* SogliaCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SogliaCollectionViewCell.swift; sourceTree = "<group>"; };
 		66E5D2C725251DF700B8F279 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -209,6 +211,7 @@
 				66D284C62525B69300DE12C3 /* RicaricaViewController.swift */,
 				66D284D52526015400DE12C3 /* SettingsViewController.swift */,
 				66D2850025260E7000DE12C3 /* InfoViewController.swift */,
+				66D2850F2526681500DE12C3 /* informazioni.txt */,
 			);
 			path = "Consumi Iliad";
 			sourceTree = "<group>";
@@ -379,6 +382,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				66AEA8782523C2F000DF2A35 /* LaunchScreen.storyboard in Resources */,
+				66D285102526681500DE12C3 /* informazioni.txt in Resources */,
 				66AEA8752523C2F000DF2A35 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,0 +1,9 @@
+Consumi Iliad non rappresenta un'applicazione ufficiale dell'operatore ma è stata sviluppata a partire del sito web ufficiale iliad.it.
+I dati contenuti provengono direttamente dalla pagina web da cui, una volta scaricata, ne viene estratto il contenuto visualizzato nell'interfaccia utente. Per l'informativa di privacy e trattamento dei dati personali si rimanda a quanto pubblicato da Iliad.
+Nessun dato è condiviso e tanto meno inviato a server differenti da Iliad.
+Le credenziali dell'account vengono salvate all'interno del dispositivo con visibilità legata alla sola applicazione, altre applicazioni non vi possono accedre, manipolare o eliminare dati.
+La durata dell'autenticazione è pari ad una normale sessione tramite browser, ad ogni accesso dell'applicazione un nuovo processo di login automatico è eseguito.
+Per l'estrazione dei dati è stata utilizzata la libreria SwiftSoup di "scinfu" (on GitHub).
+
+Per ulteriori informazioni consultare il repository ufficiale dell'applicazione su GitHub (matteovisotto/Consumi-Iliad) oppure contattare direttamente lo sviluppatore.
+

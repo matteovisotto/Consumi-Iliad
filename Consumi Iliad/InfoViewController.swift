@@ -9,7 +9,8 @@ import UIKit
 
 class InfoViewController: UIViewController {
     
-    let header = NavigationHeaderView()
+    private let header = NavigationHeaderView()
+    private let textView = UITextView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +30,16 @@ class InfoViewController: UIViewController {
         header.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
         header.heightAnchor.constraint(equalToConstant: 44).isActive = true
         header.buttonSize = 25
+        
+        self.view.addSubview(textView)
+        textView.translatesAutoresizingMaskIntoConstraints = false
+        textView.topAnchor.constraint(equalTo: header.bottomAnchor, constant: 5).isActive = true
+        textView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 5).isActive = true
+        textView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        textView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -5).isActive = true
+        textView.isEditable = false
+        textView.font = .systemFont(ofSize: 16)
+        textView.text = load(file: "informazioni")
     }
 
     @objc private func dismissViewController() {
@@ -36,4 +47,24 @@ class InfoViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
+    private func load(file name:String) -> String {
+
+            if let path = Bundle.main.path(forResource: name, ofType: "txt") {
+
+                if let contents = try? String(contentsOfFile: path) {
+
+                    return contents
+
+                } else {
+
+                    print("Error! - This file doesn't contain any text.")
+                }
+
+            } else {
+
+                print("Error! - This file doesn't exist.")
+            }
+
+            return ""
+        }
 }
