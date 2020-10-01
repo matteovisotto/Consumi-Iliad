@@ -33,6 +33,7 @@
 		66D2850125260E7000DE12C3 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D2850025260E7000DE12C3 /* InfoViewController.swift */; };
 		66D285062526641D00DE12C3 /* CreditoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D285052526641D00DE12C3 /* CreditoCollectionViewCell.swift */; };
 		66D285102526681500DE12C3 /* informazioni.txt in Resources */ = {isa = PBXBuildFile; fileRef = 66D2850F2526681500DE12C3 /* informazioni.txt */; };
+		66D2851625266E1800DE12C3 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D2851525266E1800DE12C3 /* Parser.swift */; };
 		66E5D2B92525172200B8F279 /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E5D2B82525172200B8F279 /* HomeHeaderView.swift */; };
 		66E5D2C1252519A800B8F279 /* SogliaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E5D2C0252519A800B8F279 /* SogliaCollectionViewCell.swift */; };
 		66E5D2C825251DF700B8F279 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E5D2C725251DF700B8F279 /* User.swift */; };
@@ -92,6 +93,7 @@
 		66D2850025260E7000DE12C3 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		66D285052526641D00DE12C3 /* CreditoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditoCollectionViewCell.swift; sourceTree = "<group>"; };
 		66D2850F2526681500DE12C3 /* informazioni.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = informazioni.txt; sourceTree = "<group>"; };
+		66D2851525266E1800DE12C3 /* Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
 		66E5D2B82525172200B8F279 /* HomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
 		66E5D2C0252519A800B8F279 /* SogliaCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SogliaCollectionViewCell.swift; sourceTree = "<group>"; };
 		66E5D2C725251DF700B8F279 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 		66AEA86A2523C2F000DF2A35 /* Consumi Iliad */ = {
 			isa = PBXGroup;
 			children = (
+				66D2851425266E0D00DE12C3 /* Parser */,
 				66D284E5252607CA00DE12C3 /* TableViewCells */,
 				66E5D2C625251DEA00B8F279 /* Model */,
 				66E5D2C525251DD600B8F279 /* Views */,
@@ -241,6 +244,14 @@
 				66D284F6252609B300DE12C3 /* SwitchTableViewCell.swift */,
 			);
 			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+		66D2851425266E0D00DE12C3 /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+				66D2851525266E1800DE12C3 /* Parser.swift */,
+			);
+			path = Parser;
 			sourceTree = "<group>";
 		};
 		66E5D2C525251DD600B8F279 /* Views */ = {
@@ -532,6 +543,7 @@
 				6673781C2523CC2F00145659 /* SessionManager.swift in Sources */,
 				66D284F7252609B300DE12C3 /* SwitchTableViewCell.swift in Sources */,
 				667378172523CBAF00145659 /* DataDownloader.swift in Sources */,
+				66D2851625266E1800DE12C3 /* Parser.swift in Sources */,
 				66AEA8A22523C38500DF2A35 /* LoadingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

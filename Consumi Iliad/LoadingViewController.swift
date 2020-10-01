@@ -113,15 +113,8 @@ extension LoadingViewController: DataDownloaderDelegate {
                 }
             } else {
                 //Login has been successfully completed
-                let userDiv = try doc.select("div.current-user__infos > div.bold").first()
-                let numberDiv = try doc.select("div.current-user__infos > div.smaller").last()
-                
-                let numberString = numberDiv?.ownText() ?? ""
-                let number = numberString.filter("0123456789.".contains)
-                
-                let username = userDiv?.ownText() ?? ""
-                
-                Model.shared.user = User(username: username, phoneNumber: number)
+                let parser = try Parser(dataString: data)
+                Model.shared.user = try parser.getUser()
                 
                 DispatchQueue.main.async {
                     self.switchViewController()
