@@ -97,20 +97,12 @@ extension LoadingViewController: DataDownloaderDelegate {
         }
         
         do {
-            let doc: Document = try SwiftSoup.parse(data)
-            let divs: Elements = try doc.select("div")
-            let error = divs.hasClass("flash flash-error")
-            
-            if(error){
-                for div in divs {
-                    if(try div.className() == "flash flash-error"){
-                        let message = try div.text().dropLast()
-                        DispatchQueue.main.async {
-                            self.presentErrorAlert(title: "Attenzione", message: String(message))
-                        }
-                        return
-                    }
+            let error = try Parser.isLoginError(data: data)
+            if(error.isError){
+                DispatchQueue.main.async {
+                    self.presentErrorAlert(title: "Attenzione", message: String(error.errorMessage))
                 }
+                return
             } else {
                 //Login has been successfully completed
                 let parser = try Parser(dataString: data)

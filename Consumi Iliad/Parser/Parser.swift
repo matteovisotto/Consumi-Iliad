@@ -9,7 +9,32 @@ import Foundation
 import UIKit
 import SwiftSoup
 
+struct WebError {
+    var isError: Bool
+    var errorMessage: String
+}
+
 class Parser {
+    //MARK:- Static class fuctions
+    class func isLoginError(data: String) throws -> WebError{
+        let doc: Document = try SwiftSoup.parse(data)
+        let errorDivs: Elements = try doc.select("div")
+        let error = errorDivs.hasClass("flash flash-error")
+        
+        if(error){
+            for div in errorDivs {
+                if(try div.className() == "flash flash-error"){
+                    let message = try div.text().dropLast()
+                    return WebError(isError: true, errorMessage: String(message))
+                }
+            }
+        }
+    
+        return WebError(isError: false, errorMessage: "")
+        
+    }
+    
+    //MARK:- Instance class function
     open var document: Document!
     
     init(dataString: String) throws {
@@ -24,4 +49,5 @@ class Parser {
         let username = userDiv?.ownText() ?? ""
         return User(username: username, phoneNumber: number)
     }
+    
 }
