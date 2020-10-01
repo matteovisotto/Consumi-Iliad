@@ -31,7 +31,8 @@ class CloseHeaderView: UIView {
         closeButton.leftAnchor.constraint(equalTo: leftAnchor, constant: 10).isActive = true
         closeButton.widthAnchor.constraint(equalToConstant: self.buttonSize).isActive = true
         closeButton.heightAnchor.constraint(equalToConstant: self.buttonSize).isActive = true
-        closeButton.setImage(UIImage(systemName: "xmark"), for: .normal)
+        closeButton.setBackgroundImage(UIImage(systemName: "xmark"), for: .normal)
+        closeButton.imageView?.contentMode = .scaleAspectFit
         closeButton.tintColor = .label
     }
     

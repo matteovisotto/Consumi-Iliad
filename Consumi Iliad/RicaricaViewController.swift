@@ -29,7 +29,7 @@ class RicaricaViewController: UIViewController {
         header.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
         header.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
         header.heightAnchor.constraint(equalToConstant: 44).isActive = true
-        header.buttonSize = 30
+        header.buttonSize = 25
         
         self.view.addSubview(webView)
         webView.translatesAutoresizingMaskIntoConstraints = false
