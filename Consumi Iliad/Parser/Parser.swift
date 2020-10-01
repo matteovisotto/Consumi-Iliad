@@ -15,6 +15,7 @@ struct WebError {
 }
 
 class Parser {
+    
     //MARK:- Static class fuctions
     class func isLoginError(data: String) throws -> WebError{
         let doc: Document = try SwiftSoup.parse(data)
