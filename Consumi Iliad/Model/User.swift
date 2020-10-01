@@ -15,4 +15,9 @@ class User {
         self.username = username
         self.phoneNumber = phoneNumber
     }
+    
+    init() {
+        username = ""
+        phoneNumber = ""
+    }
 }

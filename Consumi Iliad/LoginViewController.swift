@@ -166,14 +166,23 @@ class LoginViewController: UIViewController {
         else {
           return
         }
-        let rootViewController = ViewController()
+        let rootViewController = UINavigationController(rootViewController: ViewController())
+        rootViewController.navigationBar.isHidden = true
         sceneDelegate.window?.rootViewController = rootViewController
     }
     
     private func saveCredential() {
         let userDefault = UserDefaults.standard
-        userDefault.setValue(self.usernameTF.text!, forKey: "username")
-        userDefault.setValue(self.passwordTF.text!, forKey: "password")
+        Model.shared.login = Login(username: usernameTF.text!, password: passwordTF.text!)
+        if(userDefault.string(forKey: "keepCredentialStr") == nil) {
+            userDefault.setValue(self.usernameTF.text!, forKey: "username")
+            userDefault.setValue(self.passwordTF.text!, forKey: "password")
+            userDefault.set("yes", forKey: "keepCredentialStr")
+            userDefault.set(true, forKey: "keepCredential")
+        } else if(userDefault.bool(forKey: "keepCredential")) {
+            userDefault.setValue(self.usernameTF.text!, forKey: "username")
+            userDefault.setValue(self.passwordTF.text!, forKey: "password")
+        }
     }
     
     
@@ -218,6 +227,16 @@ extension LoginViewController: DataDownloaderDelegate {
                 }
             } else {
                 //Login has been successfully completed
+                let userDiv = try doc.select("div.current-user__infos > div.bold").first()
+                let numberDiv = try doc.select("div.current-user__infos > div.smaller").last()
+                
+                let numberString = numberDiv?.ownText() ?? ""
+                let number = numberString.filter("0123456789.".contains)
+                
+                let username = userDiv?.ownText() ?? ""
+                
+                Model.shared.user = User(username: username, phoneNumber: number)
+                
                 DispatchQueue.main.async {
                     self.saveCredential()
                     self.switchViewController()

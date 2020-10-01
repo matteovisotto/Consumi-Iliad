@@ -82,7 +82,8 @@ class LoadingViewController: UIViewController {
         else {
           return
         }
-        let rootViewController = ViewController()
+        let rootViewController = UINavigationController(rootViewController: ViewController())
+        rootViewController.navigationBar.isHidden = true
         sceneDelegate.window?.rootViewController = rootViewController
     }
 }
@@ -97,11 +98,11 @@ extension LoadingViewController: DataDownloaderDelegate {
         
         do {
             let doc: Document = try SwiftSoup.parse(data)
-            let errorDivs: Elements = try doc.select("div")
-            let error = errorDivs.hasClass("flash flash-error")
+            let divs: Elements = try doc.select("div")
+            let error = divs.hasClass("flash flash-error")
             
             if(error){
-                for div in errorDivs {
+                for div in divs {
                     if(try div.className() == "flash flash-error"){
                         let message = try div.text().dropLast()
                         DispatchQueue.main.async {
@@ -112,6 +113,16 @@ extension LoadingViewController: DataDownloaderDelegate {
                 }
             } else {
                 //Login has been successfully completed
+                let userDiv = try doc.select("div.current-user__infos > div.bold").first()
+                let numberDiv = try doc.select("div.current-user__infos > div.smaller").last()
+                
+                let numberString = numberDiv?.ownText() ?? ""
+                let number = numberString.filter("0123456789.".contains)
+                
+                let username = userDiv?.ownText() ?? ""
+                
+                Model.shared.user = User(username: username, phoneNumber: number)
+                
                 DispatchQueue.main.async {
                     self.switchViewController()
                 }

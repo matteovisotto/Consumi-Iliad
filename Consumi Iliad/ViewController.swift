@@ -15,11 +15,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        headerView.setView(user: User(username: "Matteo Visotto", phoneNumber: "3485659652"))
+        headerView.setView(user: Model.shared.user)
         collectionView.delegate = self
         collectionView.dataSource = self
         registerCells()
         collectionView.reloadData()
+        
+        headerView.addTarget(targer: self, selector: #selector(didTapSettings), for: .touchUpInside)
         
         let refreshControl = UIRefreshControl()
         collectionView.refreshControl = refreshControl
@@ -63,6 +65,12 @@ class ViewController: UIViewController {
     @objc private func requestRefresh() {
         self.collectionView.refreshControl?.endRefreshing()
         collectionView.reloadData()
+    }
+    
+    @objc private func didTapSettings() {
+        let settingsVC = SettingsViewController()
+        navigationController?.pushViewController(settingsVC, animated: true)
+        
     }
 }
 
