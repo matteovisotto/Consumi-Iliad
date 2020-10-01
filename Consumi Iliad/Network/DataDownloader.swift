@@ -48,6 +48,7 @@ class DataDownloader {
             }
             if(statusCode == 200) {
                 self.delegate?.didDownloadedData(result: true, fromUrl: self.downloadURL, withData: String(data: data!, encoding: .utf8) ?? "")
+                
             }
         }
         

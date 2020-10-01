@@ -11,13 +11,17 @@ import WebKit
 class RicaricaViewController: UIViewController {
     
     private let header = CloseHeaderView()
-    private let webView = UIWebView()
+    private let webView = WKWebView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         header.addTarget(target: self, selector: #selector(dismissViewController), for: .touchUpInside)
-        webView.loadRequest(URLRequest(url: URL(string: "https://iliad.it/account/")!))
+        let cookies = HTTPCookieStorage.shared.cookies ?? []
+        for cookie in cookies {
+            webView.configuration.websiteDataStore.httpCookieStore.setCookie(cookie)
+        }
+        webView.load(URLRequest(url: URL(string: "https://iliad.it/account/")!))
     }
     
 
