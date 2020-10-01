@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        headerView.setView(username: "Matteo Visotto", phoneNumber: "3485659652")
+        headerView.setView(user: User(username: "Matteo Visotto", phoneNumber: "3485659652"))
         collectionView.delegate = self
         collectionView.dataSource = self
         registerCells()
@@ -55,7 +55,9 @@ class ViewController: UIViewController {
     }
     
     @objc private func didTapRicarica() {
-        print("Did tap ricarica")
+        let ricaricaVC = RicaricaViewController()
+        ricaricaVC.modalPresentationStyle = .fullScreen
+        self.present(ricaricaVC, animated: true, completion: nil)
     }
     
     @objc private func requestRefresh() {

@@ -42,9 +42,9 @@ class HomeHeaderView: UIView {
         phoneNumber.textColor = .secondaryLabel
     }
 
-    public func setView(username: String, phoneNumber: String) {
-        self.phoneNumber.text = phoneNumber
-        self.username.text = username
+    public func setView(user:User) {
+        self.phoneNumber.text = user.phoneNumber
+        self.username.text = user.username
     }
 
 }
