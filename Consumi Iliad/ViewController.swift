@@ -79,6 +79,7 @@ class ViewController: UIViewController {
     }
     
     @objc private func requestRefresh() {
+        
         self.isRefreshing = true
         self.dataManager = DataManager(dataType: .soglie)
         dataManager.delegate = self
@@ -129,6 +130,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SogliaCollectionViewCell.cellIdentifier, for: indexPath) as! SogliaCollectionViewCell
+            cell.setCell(soglie: Model.shared.soglie!)
             return cell
         }
     }
@@ -141,7 +143,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         if(indexPath.item == 0) {
             return CGSize(width: collectionView.frame.width-30, height: 70)
         } else {
-            return CGSize(width: collectionView.frame.width-30, height: 140)
+            return CGSize(width: collectionView.frame.width-30, height: 145)
         }
     }
 }
@@ -151,7 +153,6 @@ extension ViewController: DataManagerDelegate {
         if(isRefreshing){
             self.finishRefresh()
         }
-        print(resultMessage)
         if(result){
             self.dataReady = true
             collectionView.reloadData()

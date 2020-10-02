@@ -13,6 +13,10 @@ class SogliaCollectionViewCell: UICollectionViewCell {
     private let titleLable = UILabel()
     private let stackView = UIStackView()
     
+    private let minuti = SogliaView()
+    private let sms = SogliaView()
+    private let internet = SogliaView()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
@@ -41,12 +45,27 @@ class SogliaCollectionViewCell: UICollectionViewCell {
         
         self.addSubview(stackView)
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.topAnchor.constraint(equalTo: titleLable.bottomAnchor, constant: 5).isActive = true
+        stackView.topAnchor.constraint(equalTo: titleLable.bottomAnchor, constant: 10).isActive = true
         stackView.rightAnchor.constraint(equalTo: rightAnchor, constant: -10).isActive = true
         stackView.leftAnchor.constraint(equalTo: leftAnchor, constant: 10).isActive = true
         stackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10).isActive = true
         stackView.axis = .horizontal
+        stackView.spacing = 3
         stackView.distribution = .fillEqually
         
+        stackView.addArrangedSubview(minuti)
+        stackView.addArrangedSubview(sms)
+        stackView.addArrangedSubview(internet)
+        
+        
+        
     }
+    
+    public func setCell(soglie: Soglie) {
+        minuti.setView(percentage: 1, image: UIImage(systemName: "phone")!, text: "Illimitati")
+        sms.setView(percentage: 1, image: UIImage(systemName: "envelope")!, text: "Illimitati")
+        internet.setView(percentage: 50, image: UIImage(systemName: "globe")!, text: "25GB / 50GB")
+    }
+    
+   
 }

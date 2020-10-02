@@ -39,6 +39,8 @@
 		66D285282527610800DE12C3 /* Soglie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D285272527610800DE12C3 /* Soglie.swift */; };
 		66D2852D2527671300DE12C3 /* LoadingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D2852C2527671300DE12C3 /* LoadingCollectionViewCell.swift */; };
 		66D28538252768A500DE12C3 /* LoadingAnimationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D28537252768A500DE12C3 /* LoadingAnimationExtension.swift */; };
+		66D285512527748900DE12C3 /* Contatore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D285502527748900DE12C3 /* Contatore.swift */; };
+		66D2855625277B1200DE12C3 /* SogliaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D2855525277B1200DE12C3 /* SogliaView.swift */; };
 		66E5D2B92525172200B8F279 /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E5D2B82525172200B8F279 /* HomeHeaderView.swift */; };
 		66E5D2C1252519A800B8F279 /* SogliaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E5D2C0252519A800B8F279 /* SogliaCollectionViewCell.swift */; };
 		66E5D2C825251DF700B8F279 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E5D2C725251DF700B8F279 /* User.swift */; };
@@ -104,6 +106,8 @@
 		66D285272527610800DE12C3 /* Soglie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Soglie.swift; sourceTree = "<group>"; };
 		66D2852C2527671300DE12C3 /* LoadingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingCollectionViewCell.swift; sourceTree = "<group>"; };
 		66D28537252768A500DE12C3 /* LoadingAnimationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingAnimationExtension.swift; sourceTree = "<group>"; };
+		66D285502527748900DE12C3 /* Contatore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contatore.swift; sourceTree = "<group>"; };
+		66D2855525277B1200DE12C3 /* SogliaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SogliaView.swift; sourceTree = "<group>"; };
 		66E5D2B82525172200B8F279 /* HomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
 		66E5D2C0252519A800B8F279 /* SogliaCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SogliaCollectionViewCell.swift; sourceTree = "<group>"; };
 		66E5D2C725251DF700B8F279 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -283,6 +287,8 @@
 				66D284CB2525B6E600DE12C3 /* CloseHeaderView.swift */,
 				66D284DA2526042200DE12C3 /* NavigationHeaderView.swift */,
 				66D284FB25260BD200DE12C3 /* SettingsTableViewHeader.swift */,
+				66D285502527748900DE12C3 /* Contatore.swift */,
+				66D2855525277B1200DE12C3 /* SogliaView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -548,6 +554,7 @@
 				66D28538252768A500DE12C3 /* LoadingAnimationExtension.swift in Sources */,
 				66D284FC25260BD200DE12C3 /* SettingsTableViewHeader.swift in Sources */,
 				66D284E7252607F400DE12C3 /* TextTableViewCell.swift in Sources */,
+				66D2855625277B1200DE12C3 /* SogliaView.swift in Sources */,
 				66E5D2C825251DF700B8F279 /* User.swift in Sources */,
 				66E5D2B92525172200B8F279 /* HomeHeaderView.swift in Sources */,
 				66AEA8702523C2F000DF2A35 /* ViewController.swift in Sources */,
@@ -557,6 +564,7 @@
 				66638DEF25247777001A1540 /* ErrorAlertController.swift in Sources */,
 				66D284DB2526042200DE12C3 /* NavigationHeaderView.swift in Sources */,
 				66D284D12525D50A00DE12C3 /* Model.swift in Sources */,
+				66D285512527748900DE12C3 /* Contatore.swift in Sources */,
 				66376B4D25246AB100D54DDB /* LoadingAlert.swift in Sources */,
 				66D2850125260E7000DE12C3 /* InfoViewController.swift in Sources */,
 				66D284CC2525B6E600DE12C3 /* CloseHeaderView.swift in Sources */,
