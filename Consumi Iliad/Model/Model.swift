@@ -21,5 +21,7 @@ class Model {
     
     open var login: Login = Login(username: "", password: "")
     
+    open var soglie: Soglie? = nil
+    
     
 }

@@ -11,7 +11,11 @@ class ViewController: UIViewController {
     
     private var collectionView: UICollectionView!
     private var headerView = HomeHeaderView()
-
+    private var dataManager: DataManager!
+    private var dataReady: Bool = false
+    
+    private var isRefreshing: Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -19,13 +23,24 @@ class ViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         registerCells()
-        collectionView.reloadData()
         
         headerView.addTarget(targer: self, selector: #selector(didTapSettings), for: .touchUpInside)
         
         let refreshControl = UIRefreshControl()
         collectionView.refreshControl = refreshControl
         refreshControl.addTarget(self, action: #selector(requestRefresh), for: .valueChanged)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if(Model.shared.soglie != nil){
+            dataReady = true
+            collectionView.reloadData()
+        } else {
+            self.dataManager = DataManager(dataType: .soglie)
+            dataManager.delegate = self
+            dataManager.update()
+        }
     }
     
     private func setupUI() {
@@ -52,6 +67,7 @@ class ViewController: UIViewController {
     }
 
     private func registerCells() {
+        collectionView.register(LoadingCollectionViewCell.self, forCellWithReuseIdentifier: LoadingCollectionViewCell.cellIdentifier)
         collectionView.register(CreditoCollectionViewCell.self, forCellWithReuseIdentifier: CreditoCollectionViewCell.cellIdentifier)
         collectionView.register(SogliaCollectionViewCell.self, forCellWithReuseIdentifier: SogliaCollectionViewCell.cellIdentifier)
     }
@@ -63,8 +79,16 @@ class ViewController: UIViewController {
     }
     
     @objc private func requestRefresh() {
+        self.isRefreshing = true
+        self.dataManager = DataManager(dataType: .soglie)
+        dataManager.delegate = self
+        dataManager.update()
+    }
+    
+    private func finishRefresh() {
         self.collectionView.refreshControl?.endRefreshing()
         collectionView.reloadData()
+        isRefreshing = false
     }
     
     @objc private func didTapSettings() {
@@ -72,18 +96,36 @@ class ViewController: UIViewController {
         navigationController?.pushViewController(settingsVC, animated: true)
         
     }
+    
+    private func presentErrorAlert(title: String, message: String) {
+        let errorAlert = ErrorAlertController()
+        errorAlert.providesPresentationContextTransitionStyle = true
+        errorAlert.definesPresentationContext = true
+        errorAlert.modalPresentationStyle = .overFullScreen
+        errorAlert.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
+        errorAlert.setAlert(title: title, message: message)
+        self.present(errorAlert, animated: true, completion: nil)
+    }
 }
 
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if(!self.dataReady){
+            return 1
+        }
         return 2
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        if(!dataReady && indexPath.item == 0) {
+            return collectionView.dequeueReusableCell(withReuseIdentifier: LoadingCollectionViewCell.cellIdentifier, for: indexPath) as! LoadingCollectionViewCell
+        }
+        
         if(indexPath.item == 0){
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CreditoCollectionViewCell.cellIdentifier, for: indexPath) as! CreditoCollectionViewCell
-            cell.setCell(creditoResiduo: "19,45", target: self, selector: #selector(didTapRicarica), forEvent: .touchUpInside)
+            cell.setCell(creditoResiduo: Model.shared.soglie?.credito.residuo ?? "N/A", target: self, selector: #selector(didTapRicarica), forEvent: .touchUpInside)
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SogliaCollectionViewCell.cellIdentifier, for: indexPath) as! SogliaCollectionViewCell
@@ -104,4 +146,20 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     }
 }
 
+extension ViewController: DataManagerDelegate {
+    func didFinish(withResult result: Bool, resultMessage: String) {
+        if(isRefreshing){
+            self.finishRefresh()
+        }
+        print(resultMessage)
+        if(result){
+            self.dataReady = true
+            collectionView.reloadData()
+        } else {
+            presentErrorAlert(title: "Attenzione", message: resultMessage)
+        }
+    }
+    
+    
+}
 
