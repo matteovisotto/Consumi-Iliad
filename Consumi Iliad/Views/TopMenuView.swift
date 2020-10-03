@@ -37,15 +37,19 @@ class TopMenuView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
-        
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func draw(_ rect: CGRect) {
+        super.draw(rect)
+        
+    }
+    
     private func setupUI() {
-        self.backgroundColor = .systemBackground
+        self.backgroundColor = .clear
         
         addSubview(collectionView)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
@@ -63,7 +67,7 @@ class TopMenuView: UIView {
         horizontalBarLeftConstraint = horizontalBarView.leftAnchor.constraint(equalTo: leftAnchor)
         horizontalBarLeftConstraint?.isActive = true
         horizontalBarView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
-        horizontalBarView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 1/3).isActive = true
+        horizontalBarView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 1/4).isActive = true
         horizontalBarView.heightAnchor.constraint(equalToConstant: 3).isActive = true
     }
     

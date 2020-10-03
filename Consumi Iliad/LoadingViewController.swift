@@ -85,6 +85,12 @@ class LoadingViewController: UIViewController {
         rootViewController.navigationBar.isHidden = true
         sceneDelegate.window?.rootViewController = rootViewController
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.dismiss(animated: true, completion: nil)
+        
+    }
 }
 
 extension LoadingViewController: DataDownloaderDelegate {

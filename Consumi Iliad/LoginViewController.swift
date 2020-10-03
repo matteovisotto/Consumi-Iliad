@@ -234,7 +234,10 @@ extension LoginViewController: DataDownloaderDelegate {
         }
     }
     
-    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.dismiss(animated: true, completion: nil)
+    }
 }
 
 extension String {

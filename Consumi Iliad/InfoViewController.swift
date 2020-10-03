@@ -67,4 +67,9 @@ class InfoViewController: UIViewController {
 
             return ""
         }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.dismiss(animated: true, completion: nil)
+    }
 }
