@@ -47,7 +47,7 @@ class NavigationHeaderView: UIView {
         titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 5).isActive = true
         titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -5).isActive = true
         titleLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: -5).isActive = true
-        titleLabel.leftAnchor.constraint(equalTo: backButton.rightAnchor, constant: 5).isActive = true
+        titleLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 5).isActive = true
         titleLabel.textAlignment = .center
         titleLabel.font = .systemFont(ofSize: 20, weight: .semibold)
     }
