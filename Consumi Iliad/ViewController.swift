@@ -22,7 +22,7 @@ class ViewController: UIViewController {
         headerView.setView(user: Model.shared.user)
         collectionView.delegate = self
         collectionView.dataSource = self
-        registerCells()
+        registerCollectionViewElements()
         
         headerView.addTarget(targer: self, selector: #selector(didTapSettings), for: .touchUpInside)
         
@@ -66,12 +66,13 @@ class ViewController: UIViewController {
         collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
     }
 
-    private func registerCells() {
+    private func registerCollectionViewElements() {
         collectionView.register(LoadingCollectionViewCell.self, forCellWithReuseIdentifier: LoadingCollectionViewCell.cellIdentifier)
         collectionView.register(CreditoCollectionViewCell.self, forCellWithReuseIdentifier: CreditoCollectionViewCell.cellIdentifier)
         collectionView.register(SogliaCollectionViewCell.self, forCellWithReuseIdentifier: SogliaCollectionViewCell.cellIdentifier)
         collectionView.register(ConsumiCollectionViewCell.self, forCellWithReuseIdentifier: ConsumiCollectionViewCell.cellIdentifier)
         collectionView.register(OffertaCollectionViewCell.self, forCellWithReuseIdentifier: OffertaCollectionViewCell.cellIdentifier)
+        collectionView.register(HomeFooterCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: HomeFooterCollectionReusableView.viewIdentifier)
     }
     
     @objc private func didTapRicarica() {
@@ -166,6 +167,16 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
             let consumiVC = ConsumiViewController()
             self.navigationController?.pushViewController(consumiVC, animated: true)
         }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HomeFooterCollectionReusableView.viewIdentifier, for: indexPath) as! HomeFooterCollectionReusableView
+        view.footerLabel.text = "Dati aggiornati al:\n" + (Model.shared.soglie?.lastDataUpdate() ?? "N/A")
+        return view
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+        return CGSize(width: collectionView.frame.width-30, height: 40)
     }
 }
 

@@ -17,6 +17,8 @@
 		6614A14D252A066800592856 /* OffertaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6614A14C252A066800592856 /* OffertaCollectionViewCell.swift */; };
 		6614A152252A084F00592856 /* Offerta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6614A151252A084F00592856 /* Offerta.swift */; };
 		6614A15A252A09C000592856 /* OffertaParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6614A159252A09C000592856 /* OffertaParser.swift */; };
+		6614A15F252A241600592856 /* IliadElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6614A15E252A241600592856 /* IliadElement.swift */; };
+		6614A164252A25C700592856 /* HomeFooterCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6614A163252A25C700592856 /* HomeFooterCollectionReusableView.swift */; };
 		66376B4D25246AB100D54DDB /* LoadingAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66376B4C25246AB100D54DDB /* LoadingAlert.swift */; };
 		66638DEF25247777001A1540 /* ErrorAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66638DEE25247777001A1540 /* ErrorAlertController.swift */; };
 		6673780E2523C47E00145659 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6673780D2523C47E00145659 /* LoginViewController.swift */; };
@@ -86,6 +88,8 @@
 		6614A14C252A066800592856 /* OffertaCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffertaCollectionViewCell.swift; sourceTree = "<group>"; };
 		6614A151252A084F00592856 /* Offerta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Offerta.swift; sourceTree = "<group>"; };
 		6614A159252A09C000592856 /* OffertaParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffertaParser.swift; sourceTree = "<group>"; };
+		6614A15E252A241600592856 /* IliadElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IliadElement.swift; sourceTree = "<group>"; };
+		6614A163252A25C700592856 /* HomeFooterCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFooterCollectionReusableView.swift; sourceTree = "<group>"; };
 		66376B4C25246AB100D54DDB /* LoadingAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingAlert.swift; sourceTree = "<group>"; };
 		66638DEE25247777001A1540 /* ErrorAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorAlertController.swift; sourceTree = "<group>"; };
 		6673780D2523C47E00145659 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -312,6 +316,7 @@
 				66D285502527748900DE12C3 /* Contatore.swift */,
 				66D2855525277B1200DE12C3 /* SogliaView.swift */,
 				6614A1332527BA3100592856 /* TopMenuView.swift */,
+				6614A163252A25C700592856 /* HomeFooterCollectionReusableView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -323,6 +328,7 @@
 				66D284D02525D50A00DE12C3 /* Model.swift */,
 				66D285272527610800DE12C3 /* Soglie.swift */,
 				6614A151252A084F00592856 /* Offerta.swift */,
+				6614A15E252A241600592856 /* IliadElement.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -579,6 +585,7 @@
 				66D284FC25260BD200DE12C3 /* SettingsTableViewHeader.swift in Sources */,
 				6614A15A252A09C000592856 /* OffertaParser.swift in Sources */,
 				66D284E7252607F400DE12C3 /* TextTableViewCell.swift in Sources */,
+				6614A164252A25C700592856 /* HomeFooterCollectionReusableView.swift in Sources */,
 				66D2855625277B1200DE12C3 /* SogliaView.swift in Sources */,
 				66E5D2C825251DF700B8F279 /* User.swift in Sources */,
 				6614A1342527BA3100592856 /* TopMenuView.swift in Sources */,
@@ -592,6 +599,7 @@
 				66638DEF25247777001A1540 /* ErrorAlertController.swift in Sources */,
 				66D284DB2526042200DE12C3 /* NavigationHeaderView.swift in Sources */,
 				66D284D12525D50A00DE12C3 /* Model.swift in Sources */,
+				6614A15F252A241600592856 /* IliadElement.swift in Sources */,
 				66D285512527748900DE12C3 /* Contatore.swift in Sources */,
 				66376B4D25246AB100D54DDB /* LoadingAlert.swift in Sources */,
 				66D2850125260E7000DE12C3 /* InfoViewController.swift in Sources */,

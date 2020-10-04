@@ -30,7 +30,7 @@ struct Credito {
     var consumi: String
 }
 
-class Soglie {
+class Soglie: IliadElement {
     enum Tipo {
         case minuti
         case sms

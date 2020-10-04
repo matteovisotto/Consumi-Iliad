@@ -7,13 +7,15 @@
 
 import Foundation
 
-class Offerta {
+class Offerta: IliadElement {
     
     var nome: String!
     var costo: String!
     var rinnovo: String!
     
-    init() {
+    override init() {
+        super.init()
+        
         self.nome = "N/A"
         self.costo = "N/A"
         self.rinnovo = "N/A"

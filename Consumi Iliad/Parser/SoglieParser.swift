@@ -15,6 +15,9 @@ class SoglieParser: Parser {
         try super.init(dataString: dataString)
     }
     
-    
+    override func parse() throws -> IliadElement {
+        let soglia = Soglie(minuti: Minuti(totali: "", residui: ""), sms: Sms(totali: "", residui: ""), internet: Internet(totali: "", residui: ""), credito: Credito(residuo: "", consumi: ""))
+        return soglia
+    }
     
 }

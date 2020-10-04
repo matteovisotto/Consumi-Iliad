@@ -13,7 +13,7 @@ class OffertaParser: Parser {
         try super.init(dataString: dataString)
     }
     
-    public func parseOfferta() throws -> Offerta {
+    override public func parse() throws -> IliadElement {
         let nomeOfferta = try document.select("div.title > span.red").first()!
         let dataRinnovo = try document.select("div.details > div")[1]
         let nameString = String(nomeOfferta.ownText())

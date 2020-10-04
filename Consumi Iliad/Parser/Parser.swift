@@ -51,4 +51,7 @@ class Parser {
         return User(username: username, phoneNumber: number)
     }
         
+    public func parse() throws -> IliadElement {
+        preconditionFailure("This method must be overridden") 
+    }
 }

@@ -68,7 +68,7 @@ extension DataManager: DataDownloaderDelegate {
                     break
                 case .offerta:
                     let offertaParser = try OffertaParser(dataString: data)
-                    Model.shared.offerta = try offertaParser.parseOfferta()
+                    Model.shared.offerta = (try offertaParser.parse() as? Offerta)
                     DispatchQueue.main.async {
                         self.delegate?.didFinish(withResult: true, resultMessage: "Offerta aggiornata correttamente")
                     }
