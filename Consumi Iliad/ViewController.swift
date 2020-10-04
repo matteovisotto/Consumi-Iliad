@@ -71,6 +71,7 @@ class ViewController: UIViewController {
         collectionView.register(CreditoCollectionViewCell.self, forCellWithReuseIdentifier: CreditoCollectionViewCell.cellIdentifier)
         collectionView.register(SogliaCollectionViewCell.self, forCellWithReuseIdentifier: SogliaCollectionViewCell.cellIdentifier)
         collectionView.register(ConsumiCollectionViewCell.self, forCellWithReuseIdentifier: ConsumiCollectionViewCell.cellIdentifier)
+        collectionView.register(OffertaCollectionViewCell.self, forCellWithReuseIdentifier: OffertaCollectionViewCell.cellIdentifier)
     }
     
     @objc private func didTapRicarica() {
@@ -116,7 +117,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         if(!self.dataReady){
             return 1
         }
-        return 3
+        return 4
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -129,9 +130,13 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CreditoCollectionViewCell.cellIdentifier, for: indexPath) as! CreditoCollectionViewCell
             cell.setCell(creditoResiduo: Model.shared.soglie?.credito.residuo ?? "N/A", target: self, selector: #selector(didTapRicarica), forEvent: .touchUpInside)
             return cell
-        } else if(indexPath.item == 1){
+        } else if(indexPath.item == 2){
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SogliaCollectionViewCell.cellIdentifier, for: indexPath) as! SogliaCollectionViewCell
             cell.setCell(soglie: Model.shared.soglie!)
+            return cell
+        }else if(indexPath.item == 1){
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: OffertaCollectionViewCell.cellIdentifier, for: indexPath) as! OffertaCollectionViewCell
+            cell.setCell(perOfferta: Model.shared.offerta)
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ConsumiCollectionViewCell.cellIdentifier, for: indexPath) as! ConsumiCollectionViewCell
@@ -146,7 +151,9 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if(indexPath.item == 0) {
             return CGSize(width: collectionView.frame.width-30, height: 70)
-        } else if(indexPath.item == 2) {
+        } else if(indexPath.item == 1) {
+            return CGSize(width: collectionView.frame.width-30, height: 100)
+        } else if(indexPath.item == 3) {
             return CGSize(width: collectionView.frame.width-30, height: 70)
         } else {
             return CGSize(width: collectionView.frame.width-30, height: 145)
@@ -154,7 +161,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if(indexPath.item == 2){
+        if(indexPath.item == 3){
             //Consumi
             let consumiVC = ConsumiViewController()
             self.navigationController?.pushViewController(consumiVC, animated: true)

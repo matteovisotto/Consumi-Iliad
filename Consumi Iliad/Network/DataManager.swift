@@ -16,6 +16,7 @@ class DataManager {
     enum DataType: String{
         case soglie = "https://iliad.it/account/"
         case storico = ""
+        case offerta = "https://www.iliad.it/account/la-mia-offerta"
     }
     
     open var delegate: DataManagerDelegate? = nil
@@ -63,6 +64,13 @@ extension DataManager: DataDownloaderDelegate {
                     
                     DispatchQueue.main.async {
                         self.delegate?.didFinish(withResult: true, resultMessage: "Storico aggiornato correttamente")
+                    }
+                    break
+                case .offerta:
+                    let offertaParser = try OffertaParser(dataString: data)
+                    Model.shared.offerta = try offertaParser.parseOfferta()
+                    DispatchQueue.main.async {
+                        self.delegate?.didFinish(withResult: true, resultMessage: "Offerta aggiornata correttamente")
                     }
                     break
                 case .none:

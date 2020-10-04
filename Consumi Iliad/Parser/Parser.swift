@@ -50,5 +50,5 @@ class Parser {
         let username = userDiv?.ownText() ?? ""
         return User(username: username, phoneNumber: number)
     }
-    
+        
 }

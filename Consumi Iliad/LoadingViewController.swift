@@ -111,15 +111,31 @@ extension LoadingViewController: DataDownloaderDelegate {
             } else {
                 //Login has been successfully completed
                 let parser = try Parser(dataString: data)
+                let dataManager = DataManager(dataType: .offerta)
+                dataManager.delegate = self
+                dataManager.update()
                 Model.shared.user = try parser.getUser()
                 
-                DispatchQueue.main.async {
-                    self.switchViewController()
-                }
             }
         } catch {
             DispatchQueue.main.async {
                 self.presentErrorAlert(title: "Attenzione", message: "Si è verificato un errore con la risposta fornita dal server")
+            }
+        }
+    }
+    
+    
+}
+
+extension LoadingViewController: DataManagerDelegate {
+    func didFinish(withResult result: Bool, resultMessage: String) {
+        if(result) {
+            DispatchQueue.main.async {
+                self.switchViewController()
+            }
+        } else {
+            DispatchQueue.main.async {
+                self.presentErrorAlert(title: "Attenzione", message: resultMessage)
             }
         }
     }

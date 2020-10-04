@@ -23,5 +23,8 @@ class Model {
     
     open var soglie: Soglie? = nil
     
+    open var offerta: Offerta? = nil
+    
+    
     
 }

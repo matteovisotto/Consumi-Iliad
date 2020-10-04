@@ -221,11 +221,10 @@ extension LoginViewController: DataDownloaderDelegate {
                 //Login has been successfully completed
                 let parser = try Parser(dataString: data)
                 Model.shared.user = try parser.getUser()
+                let dataManager = DataManager(dataType: .offerta)
+                dataManager.delegate = self
+                dataManager.update()
                 
-                DispatchQueue.main.async {
-                    self.saveCredential()
-                    self.switchViewController()
-                }
             }
         } catch {
             DispatchQueue.main.async {
@@ -238,6 +237,23 @@ extension LoginViewController: DataDownloaderDelegate {
         super.viewWillDisappear(animated)
         self.dismiss(animated: true, completion: nil)
     }
+}
+
+extension LoginViewController: DataManagerDelegate {
+    func didFinish(withResult result: Bool, resultMessage: String) {
+        if(result) {
+            DispatchQueue.main.async {
+                self.saveCredential()
+                self.switchViewController()
+            }
+        } else {
+            DispatchQueue.main.async {
+                self.presentErrorAlert(title: "Attenzione", message: resultMessage)
+            }
+        }
+    }
+    
+    
 }
 
 extension String {
