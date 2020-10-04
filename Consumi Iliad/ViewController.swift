@@ -18,6 +18,13 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { success, error in
+          if error == nil && success {
+            print("Notification ok")
+          } else {
+            print("Notification not")
+          }
+        }
         setupUI()
         headerView.setView(user: Model.shared.user)
         collectionView.delegate = self
