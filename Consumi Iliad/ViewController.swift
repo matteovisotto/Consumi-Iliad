@@ -148,6 +148,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ConsumiCollectionViewCell.cellIdentifier, for: indexPath) as! ConsumiCollectionViewCell
+            cell.setCell(primaryText: "Consumi", secondaryText: "Visualizza i consumi extra")
             return cell
         }
     }
