@@ -126,7 +126,7 @@ extension ConsumiViewController: UITableViewDelegate, UITableViewDataSource {
             
         }
         
-        return 3
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -143,6 +143,14 @@ extension ConsumiViewController: UITableViewDelegate, UITableViewDataSource {
         }
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+        //Insert condition for no consumi
+        if(true){
+            return "Nessun consumo extra è stato effettuato"
+        }
+        return ""
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

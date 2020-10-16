@@ -10,19 +10,19 @@ import Foundation
 struct Minuti {
     var isUnlimited: Bool = true
     var totali: String
-    var residui: String
+    var consumati: String
 }
 
 struct Sms {
     var isUnlimited: Bool = true
     var totali: String
-    var residui: String
+    var consumati: String
 }
 
 struct Internet {
     var isUnlimited: Bool = false
     var totali: String
-    var residui: String
+    var consumati: String
 }
 
 struct Credito {
@@ -53,7 +53,7 @@ class Soglie: IliadElement {
     }
     
     override convenience init() {
-        self.init(minuti: Minuti(totali: "", residui: ""), sms: Sms(totali: "", residui: ""), internet: Internet(totali: "", residui: ""), credito: Credito(residuo: "", consumi: ""), rinnovo: "N/A")
+        self.init(minuti: Minuti(totali: "", consumati: ""), sms: Sms(totali: "", consumati: ""), internet: Internet(totali: "", consumati: ""), credito: Credito(residuo: "", consumi: ""), rinnovo: "N/A")
     }
     
     

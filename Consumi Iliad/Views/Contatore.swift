@@ -37,12 +37,10 @@ class Contatore: UIView {
         
         let percentage: CGFloat = {
             let value:CGFloat = (self.dataSource?.fillPercentage()) ?? 0
-            if(value>1){
-                return value/100
-            } else if (value<0){
+            if (value<0){
                 return 0
             }
-            return value
+            return value/100
         }()
         
         

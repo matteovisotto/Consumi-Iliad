@@ -18,7 +18,10 @@ class SoglieParser: Parser {
     override func parse() throws -> IliadElement {
         let creditoResiduo = try document.select("b.red").first()!.ownText().dropLast()
         let dataRinnovo = try document.select("div.end_offerta").first()!.ownText()
-        let soglia = Soglie(minuti: Minuti(totali: "", residui: ""), sms: Sms(totali: "", residui: ""), internet: Internet(totali: "", residui: ""), credito: Credito(residuo: String(creditoResiduo), consumi: ""), rinnovo: getDataRinnovo(fromString: dataRinnovo))
+        let totalData = try document.select("div.conso__text")[2]
+        let totalDataTxt = getTotalInternet(fromString: totalData.ownText()) ?? "0"
+        let usedData = try document.select("div#conso-progress").first()!.attr("data-progress-value").replacingOccurrences(of: ",", with: ".")
+        let soglia = Soglie(minuti: Minuti(totali: "Illimitati", consumati: ""), sms: Sms(totali: "Illimitati", consumati: ""), internet: Internet(totali: totalDataTxt, consumati: usedData), credito: Credito(residuo: String(creditoResiduo), consumi: ""), rinnovo: getDataRinnovo(fromString: dataRinnovo))
         return soglia
     }
     
@@ -35,6 +38,15 @@ class SoglieParser: Parser {
             return next
         }
         return "N/A"
+    }
+    
+    private func getTotalInternet(fromString string: String) -> String? {
+        let regex = "[0-9]+GB"
+        if let range = string.range(of: regex, options: .regularExpression) {
+            let str = String(string[range])
+            return String(str[str.startIndex..<str.index(str.endIndex, offsetBy: -2)])
+        }
+        return nil
     }
     
 }

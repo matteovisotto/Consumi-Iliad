@@ -62,10 +62,15 @@ class SogliaCollectionViewCell: UICollectionViewCell {
     }
     
     public func setCell(soglie: Soglie) {
-        minuti.setView(percentage: 1, image: UIImage(systemName: "phone")!, text: "Illimitati")
-        sms.setView(percentage: 1, image: UIImage(systemName: "envelope")!, text: "Illimitati")
-        internet.setView(percentage: 50, image: UIImage(systemName: "globe")!, text: "25GB / 50GB")
+        minuti.setView(percentage: 100, image: UIImage(systemName: "phone")!, text: soglie.minuti.totali)
+        sms.setView(percentage: 100, image: UIImage(systemName: "envelope")!, text: soglie.sms.totali)
+        let leftData = (Float(soglie.internet.totali) ?? 0) - (Float(soglie.internet.consumati) ?? 0)
+        internet.setView(percentage: getPercentage(forUsedValue: leftData, withTotalValue: Float(soglie.internet.totali) ?? 0), image: UIImage(systemName: "globe")!, text: String(format: "%.2f", leftData) + " / " + soglie.internet.totali + " GB" )
     }
     
+    private func getPercentage(forUsedValue used: Float, withTotalValue total: Float) -> CGFloat {
+        return CGFloat((used*100)/total)
+        
+    }
    
 }
