@@ -56,6 +56,13 @@ extension DataManager: DataDownloaderDelegate {
                     let soglieParser = try SoglieParser(dataString: data)
                     Model.shared.soglie = (try soglieParser.parse() as? Soglie)
                     DispatchQueue.main.async {
+                        NotificationManager.updateNotificationData(forNewDateAsString: Model.shared.soglie?.rinnovo ?? "01/01/2020") { (result) in
+                            if(!result){
+                                self.delegate?.didFinish(withResult: false, resultMessage: "Soglie aggiornate ma si è verificato un errore nell'aggiornamento del sistema di notifiche")
+                            }
+                        }
+                    }
+                    DispatchQueue.main.async {
                         self.delegate?.didFinish(withResult: true, resultMessage: "Soglie aggiornate correttamente")
                     }
                     break
