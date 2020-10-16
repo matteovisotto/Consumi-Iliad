@@ -21,7 +21,7 @@ class RicaricaViewController: UIViewController {
         for cookie in cookies {
             webView.configuration.websiteDataStore.httpCookieStore.setCookie(cookie)
         }
-        webView.load(URLRequest(url: URL(string: "https://iliad.it/account/")!))
+        webView.load(URLRequest(url: URL(string: "https://iliad.it/account/ricarica")!))
     }
     
 

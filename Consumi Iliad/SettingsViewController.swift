@@ -13,18 +13,7 @@ class SettingsViewController: UIViewController {
     private let header = NavigationHeaderView()
     private var tableView = UITableView(frame: .zero, style: .insetGrouped)
     
-    let notificationDay: String = {
-        let str = Model.shared.offerta?.rinnovo ?? "01/01/2020"
-        let formatter = DateFormatter()
-        formatter.dateFormat = "dd/MM/yyyy"
-        formatter.locale = Calendar.current.locale
-        formatter.timeZone = Calendar.current.timeZone
-        let date = formatter.date(from: str)!
-        let dayBefore = Calendar.current.date(byAdding: .day, value: -1, to: date)!
-        let newDateStr = formatter.string(from: dayBefore)
-        let day = String(newDateStr[newDateStr.startIndex..<newDateStr.index(str.startIndex, offsetBy: 2)])
-        return day
-    }()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,8 +24,6 @@ class SettingsViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.reloadData()
-        
-        print(notificationDay)
     }
     
 
@@ -72,13 +59,6 @@ class SettingsViewController: UIViewController {
         tableView.register(SwitchTableViewCell.self, forCellReuseIdentifier: SwitchTableViewCell.cellIdentifier)
         tableView.register(TextTableViewCell.self, forCellReuseIdentifier: TextTableViewCell.cellIdentifier)
     }
-
-    private func disableNotifications() {
-        let center = UNUserNotificationCenter.current()
-            center.removeAllDeliveredNotifications()    // to remove all delivered notifications
-            center.removeAllPendingNotificationRequests()   // to remove all pending notifications
-            UIApplication.shared.applicationIconBadgeNumber = 0 // to clear the icon notification badge
-    }
     
     @objc private func dismissViewController() {
         navigationController?.popViewController(animated: true)
@@ -87,23 +67,8 @@ class SettingsViewController: UIViewController {
     
     @objc private func handleNotification(_ sender: UISwitch) {
         if(sender.isOn){
-            var dateComponents = DateComponents()
-            dateComponents.hour = 9
-            dateComponents.day = Int(self.notificationDay)
-            let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
-
-            // 2
-            let content = UNMutableNotificationContent()
-            content.title = "Rinnovo"
-            content.body = "Domani la tua offerta si rinnova, assicurati di aver credito sufficiente"
-
-            let randomIdentifier = UUID().uuidString
-            let request = UNNotificationRequest(identifier: randomIdentifier, content: content, trigger: trigger)
-
-            // 3
-            UNUserNotificationCenter.current().add(request) { error in
-              if error != nil {
-                DispatchQueue.main.async {
+            NotificationManager.enableNotification(forDateAsString: Model.shared.soglie?.rinnovo ?? "01/01/2020") { (result) in
+                if !result {
                     let errorAlert = ErrorAlertController()
                     errorAlert.providesPresentationContextTransitionStyle = true
                     errorAlert.definesPresentationContext = true
@@ -112,17 +77,11 @@ class SettingsViewController: UIViewController {
                     errorAlert.setAlert(title: "Attenzione", message: "Si è verificato un errore nell'abilitazione delle notifiche, assicurati di aver abilitato i permessi dalle impostazioni")
                     self.present(errorAlert, animated: true, completion: nil)
                 }
-                
-              } else {
-                DispatchQueue.main.async {
-                    UserDefaults.standard.setValue(sender.isOn, forKey: "notifications")
-                }
-                
-              }
+            UserDefaults.standard.setValue(result, forKey: "notifications")
             }
         } else {
             UserDefaults.standard.setValue(sender.isOn, forKey: "notifications")
-            disableNotifications()
+            NotificationManager.disableNotifications()
         }
     }
     
@@ -209,7 +168,7 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
             UserDefaults.standard.removeObject(forKey: "username")
             UserDefaults.standard.removeObject(forKey: "password")
             UserDefaults.standard.removeObject(forKey: "notifications")
-            disableNotifications()
+            NotificationManager.disableNotifications()
             Model.shared.login = Login(username: "", password: "")
             guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
               let sceneDelegate = windowScene.delegate as? SceneDelegate

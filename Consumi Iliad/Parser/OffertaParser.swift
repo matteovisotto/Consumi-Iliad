@@ -15,10 +15,8 @@ class OffertaParser: Parser {
     
     override public func parse() throws -> IliadElement {
         let nomeOfferta = try document.select("div.title > span.red").first()!
-        let dataRinnovo = try document.select("div.details > div")[1]
         let nameString = String(nomeOfferta.ownText())
-        let dataRinnovoString = String(dataRinnovo.ownText())
-        return Offerta(nome: getName(fromString: nameString), costo: getCosto(fromString: nameString), rinnovo: getDataRinnovo(fromString: dataRinnovoString))
+        return Offerta(nome: getName(fromString: nameString), costo: getCosto(fromString: nameString))
     }
     
     private func getName(fromString str: String) -> String {
@@ -32,21 +30,6 @@ class OffertaParser: Parser {
         let lastSpaceIndex = str.lastIndex(of: " ") ?? str.endIndex
         let costoStr = String(str[lastSpaceIndex..<str.endIndex]).trimmingCharacters(in: .whitespacesAndNewlines)
         return String(costoStr.dropLast())
-    }
-    
-    private func getDataRinnovo(fromString str: String) -> String {
-        let regex = "[0-9]{2}/[0-9]{2}/[0-9]{4}"
-        if let range = str.range(of: regex, options: .regularExpression){
-            let formatter = DateFormatter()
-            formatter.dateFormat = "dd/MM/yyyy"
-            formatter.locale = Calendar.current.locale
-            formatter.timeZone = Calendar.current.timeZone
-            let date = formatter.date(from: String(str[range])) ?? Date()
-            let nextMonth = Calendar.current.date(byAdding: .month, value: 1, to: Date()) ?? Date()
-            let next = "\(date.get(.day))/\(nextMonth.get(.month))/\(nextMonth.get(.year))"
-            return next
-        }
-        return "N/A"
     }
 }
 

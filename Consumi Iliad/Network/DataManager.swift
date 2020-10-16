@@ -14,8 +14,8 @@ protocol DataManagerDelegate {
 class DataManager {
    
     enum DataType: String{
-        case soglie = "https://iliad.it/account/"
-        case storico = ""
+        case soglie = "https://iliad.it/account/consumi-e-credito"
+        case storico = "https://iliad.it/account/consumi-e-credito?historyId=0"
         case offerta = "https://www.iliad.it/account/la-mia-offerta"
     }
     
@@ -53,7 +53,8 @@ extension DataManager: DataDownloaderDelegate {
                 
                 case .soglie:
                     //Update model
-                    Model.shared.soglie = Soglie(minuti: Minuti(totali: "Illimitati", residui: ""), sms: Sms(totali: "Illimitati", residui: ""), internet: Internet(isUnlimited: false, totali: "50", residui: "10"), credito: Credito(residuo: "10,54", consumi: ""))
+                    let soglieParser = try SoglieParser(dataString: data)
+                    Model.shared.soglie = (try soglieParser.parse() as? Soglie)
                     DispatchQueue.main.async {
                         self.delegate?.didFinish(withResult: true, resultMessage: "Soglie aggiornate correttamente")
                     }

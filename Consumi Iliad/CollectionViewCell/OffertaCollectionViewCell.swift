@@ -77,11 +77,12 @@ class OffertaCollectionViewCell: UICollectionViewCell {
         costoLabel.bottomAnchor.constraint(equalTo: prossimoRinnovoLabel.topAnchor, constant: -5).isActive = true
     }
     
-    public func setCell(perOfferta offerta: Offerta?) {
+    public func setCell(perOfferta offerta: Offerta?, conSoglie soglie: Soglie?) {
         let myOfferta = offerta ?? Offerta()
+        let mySoglie = soglie ?? Soglie()
         self.nomeOfferta.text = myOfferta.nome
         self.costoLabel.text = myOfferta.costo + " €/mese"
-        self.prossimoRinnovoLabel.text = "Prossimo rinnovo: " + myOfferta.rinnovo
+        self.prossimoRinnovoLabel.text = "Prossimo rinnovo: " + mySoglie.rinnovo
         
     }
 }

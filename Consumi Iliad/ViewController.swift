@@ -140,11 +140,11 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
             return cell
         } else if(indexPath.item == 2){
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SogliaCollectionViewCell.cellIdentifier, for: indexPath) as! SogliaCollectionViewCell
-            cell.setCell(soglie: Model.shared.soglie!)
+            cell.setCell(soglie: Model.shared.soglie ?? Soglie())
             return cell
         }else if(indexPath.item == 1){
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: OffertaCollectionViewCell.cellIdentifier, for: indexPath) as! OffertaCollectionViewCell
-            cell.setCell(perOfferta: Model.shared.offerta)
+            cell.setCell(perOfferta: Model.shared.offerta, conSoglie: Model.shared.soglie)
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ConsumiCollectionViewCell.cellIdentifier, for: indexPath) as! ConsumiCollectionViewCell

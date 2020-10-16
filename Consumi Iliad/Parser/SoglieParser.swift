@@ -16,8 +16,25 @@ class SoglieParser: Parser {
     }
     
     override func parse() throws -> IliadElement {
-        let soglia = Soglie(minuti: Minuti(totali: "", residui: ""), sms: Sms(totali: "", residui: ""), internet: Internet(totali: "", residui: ""), credito: Credito(residuo: "", consumi: ""))
+        let creditoResiduo = try document.select("b.red").first()!.ownText().dropLast()
+        let dataRinnovo = try document.select("div.end_offerta").first()!.ownText()
+        let soglia = Soglie(minuti: Minuti(totali: "", residui: ""), sms: Sms(totali: "", residui: ""), internet: Internet(totali: "", residui: ""), credito: Credito(residuo: String(creditoResiduo), consumi: ""), rinnovo: getDataRinnovo(fromString: dataRinnovo))
         return soglia
+    }
+    
+       
+    private func getDataRinnovo(fromString str: String) -> String {
+        let regex = "[0-9]{2}/[0-9]{2}/[0-9]{4}"
+        if let range = str.range(of: regex, options: .regularExpression){
+            let formatter = DateFormatter()
+            formatter.dateFormat = "dd/MM/yyyy"
+            formatter.locale = Calendar.current.locale
+            formatter.timeZone = Calendar.current.timeZone
+            let date = formatter.date(from: String(str[range])) ?? Date()
+            let next = "\(date.get(.day))/\(date.get(.month))/\(date.get(.year))"
+            return next
+        }
+        return "N/A"
     }
     
 }
