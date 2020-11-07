@@ -130,7 +130,7 @@ class LoginViewController: UIViewController {
     }
     
     @objc private func performLogin() {
-        
+        print(passwordTF.text!)
         loadingAlert = LoadingAlert(frame: self.view.frame)
         loadingAlert!.activityMessage = "Login in corso..."
         loadingAlert!.present(in: self)

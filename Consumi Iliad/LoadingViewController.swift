@@ -17,12 +17,11 @@ class LoadingViewController: UIViewController {
         let userDefaults = UserDefaults.standard
         let username = userDefaults.string(forKey: "username") ?? String()
         let password = userDefaults.string(forKey: "password") ?? String()
-        
+        self.setupUI()
         if(username.isEmpty || password.isEmpty) {
-            showLogin()
+            self.showLogin()
         } else {
-            setupUI()
-            doLogin(username: username, password: password)
+            self.doLogin(username: username, password: password)
         }
     }
     

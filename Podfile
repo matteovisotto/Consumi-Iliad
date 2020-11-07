@@ -17,5 +17,4 @@ target 'Consumi Iliad' do
   end
 
 pod 'SwiftSoup'
-
 end
