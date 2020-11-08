@@ -125,7 +125,8 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         if(!self.dataReady){
             return 1
         }
-        return 4
+        //return 4 //Return 4 items in order to display "Consumi extra" cell
+        return 3
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
